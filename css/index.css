@@ -1,3 +1,22 @@
 body {
     margin: 0%;
 }
+
+/* container-first-paragraph */
+#container-first-paragraph {
+    margin:  0% 10%;
+    height: 450px;
+}
+
+#container-first-paragraph-pic {
+    float: left;
+}
+
+#container-first-paragraph-chart {
+    float: right;
+    background-color: gainsboro;
+    height: 400px;
+    width: 700px;
+    padding: 10px;
+    border-radius: 10px;
+}
