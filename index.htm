@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="C:\robot-project\css\index.css">  <!--連結到index.css-->
+
+    <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+    
 </head>
 <body>
     <header>
@@ -13,6 +16,19 @@
     <nav>
         <h2>navbar</h2>
     </nav>
+    <div class="box">
+        <a class="button-log-in" href="#popup1">登入</a>
+    </div>
+    
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Here i am</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                Thank to pop me out of that button, but now i'm done so you can close this window.
+            </div>
+        </div>
+    </div>
     <section>
         <div id="container-first-paragraph">
             <div id="container-first-paragraph-pic">
@@ -21,7 +37,7 @@
                 </div>
             </div>
             <div id="container-first-paragraph-chart">
-                <div>123</div>
+                <div id="container-chart"></div>
             </div>
         </div>
         <div>
@@ -35,5 +51,51 @@
     <footer>
         <h2>footer</h2>
     </footer>
+    <script>
+        const data = {
+            "18-24歲": 12,
+            "25-29歲": 18,
+            "30-34歲": 22,
+            "35-39歲": 25,
+            "40-44歲": 32,
+            "45-49歲": 35,
+            "50-54歲": 26,
+            "55歲+": 18
+        }
+
+        const container = document.querySelector('#container-chart');
+        const xAxisCate = Object.keys(data);
+        const seriesData = xAxisCate.map(key => data[key]);
+
+        var myChart = Highcharts.chart(container, {
+        chart: {
+            type: "line"
+        },
+        title: {
+            text: "您的投資組合",
+        },
+        subtitle: {
+            // 副標題設定
+        },
+        caption: {
+            // 圖表說明設定
+        },
+        credits: {
+            // 版權標籤設定
+        },
+        xAxis: {
+            categories: xAxisCate
+        },
+        yAxis: {
+            title: {
+            text: "人數"
+            }
+        },
+        series: [{
+            name: "XX公司員工",
+            data: seriesData
+        }]
+        });    
+    </script> 
 </body>
 </html>
