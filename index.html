@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>homepage</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <ul class="navbar">
+        <li class="navbar" id="Login"><a href="#Login">我要登入</a></li>
+        <li class="navbar"><a href="#Q&A">Q&A</a></li>
+        <li class="navbar"><a href="#How to use">如何使用</a></li>
+        <li class="navbar"><a href="#About us">關於我們</a></li>
+        <li class="navbar"><a href="#Estimate">立即試算</a></li>
+        <li class="navbar" id="Logo">
+          <img
+            src="./asset/image/logo_robot.png"
+            alt="Robot"
+            style="width: 50px; height: 50px"
+          />
+        </li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <a class="button-log-in" href="#popup1">登入</a>
+    </div>
+
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <h2>Here i am</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          Thank to pop me out of that button, but now i'm done so you can close
+          this window.
+        </div>
+      </div>
+    </div>
+
+    <div id="container-first-paragraph">
+      <div id="container-first-paragraph-pic">
+        <div>
+          <a href=""
+            ><img
+              src="./asset/image/woman-who-saves-money-piggy.jpg"
+              alt=""
+              style="height: 400px"
+          /></a>
+        </div>
+      </div>
+      <div id="container-first-paragraph-chart">
+        <div id="container-chart"></div>
+      </div>
+    </div>
+
+    <div id="container-second-paragraph">
+      <div class="container-second-paragraph-block">
+        <img src="./asset/image/invest-screens.png" />
+        <label>自主交易</label>
+        <div class="h4">零元佣金</div>
+        <div class="container-second-paragraph-block-hide">
+          <div class="h4">自主交易<br />零元佣金</div>
+          <div class="h5">您可以通過多種設備進行免佣金交易此外,無論您身在何處,全天候皆可連接市場｡</div>
+        </div>
+      </div>
+
+      <div class="container-second-paragraph-block">
+        <img src="./asset/image/savings_goals_icon.png" />
+        <label>為將來存錢</label>
+        <div class="h4">規劃您的人生階段</div>
+        <div class="container-second-paragraph-block-hide">
+            <div class="h4">為將來存錢<br />規劃人生階段</div>
+            <div class="h5">為短期和長期目標儲蓄的第一步是確定您需要儲蓄的金額,以及何時需要資金｡</div>
+          </div>
+      </div>
+      <div class="container-second-paragraph-block">
+        <img src="./asset/image/ipad-icon2.png" />
+        <label>智能投資組合</label>
+        <div class="h4">自動化的理財</div>
+        <div class="container-second-paragraph-block-hide">
+            <div class="h4">智能投資組合<br />自動化理財</div>
+            <div class="h5">由（人類）團隊設計的多元化投資組合；隨著您的財務需求發生變化,隨時更新您的投資組合目標｡</div>
+          </div>
+      </div>
+    </div>
+
+    <div id="container-third-paragraph">
+      <div class="column">
+        <div class="p">常見問題集 FQA</div>
+        <div class="container-third-paragraph-img-block-container">
+          <div class="container-third-paragraph-img-block">
+            <img id="qa1" src="./asset/image/qa1.png" />
+            <img id="qa2" src="./asset/image/qa2.png" />
+          </div>
+        </div>
+      </div>
+      <div class="column container-third-paragraph-details-block">
+        <details id="container-third-paragraph-details1">
+          <summary class="borderBottom">
+            1. 使用「robot」須具備哪些資格？
+          </summary>
+          <div class="label_block">
+            <label>
+              A:
+              本行客戶：您只要持有我們的存款帳戶，並依序完成以下步驟即可使用「robot」。
+            </label>
+          </div>
+        </details>
+        <details id="container-third-paragraph-details2">
+          <summary class="borderBottom">2. 下單後何時會進行扣款？</summary>
+          <div class="label_block">
+            <label>
+              A:
+              若為單筆投資則當您新建或加碼現有投資組合後，將先圈存投資款項，次一營業日下單時再進行扣款。
+            </label>
+          </div>
+        </details>
+        <details id="container-third-paragraph-details3">
+          <summary class="borderBottom">
+            3. 若我有一個單本投入的投資組合，可以追加投資金額嗎？
+          </summary>
+          <div class="label_block">
+            <label> A: 若為單筆投入的投資組合，隨時可以追加投資金額。 </label>
+          </div>
+        </details>
+        <details id="container-third-paragraph-details4">
+          <summary>4. 可以投資的幣別？</summary>
+          <div class="label_block">
+            <label> A: 目前「robot」系統僅開放以新台幣投資。 </label>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer_navbar">
+        <p>
+          <br /><br />
+          <a class="footer_navbar_a" href="#About us">關於我們|</a>
+          <a class="footer_navbar_a" href="#Guided">網站導覽|</a>
+          <a class="footer_navbar_a" href="#privacy right"
+            >隱私權保護級著作權聲明|</a
+          >
+          <a class="footer_navbar_a" href="#Browser version">瀏覽器版本說明</a>
+        </p>
+        <p>
+          聯絡資訊
+          <i class="material-icons">&#xe0cd;</i>
+          02-556-383
+          <i class="material-icons">&#xe0e1;</i>
+          1111@ntub.edu.tw
+        </p>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
