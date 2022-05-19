@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="C:\robot-project\css\index.css">  <!--連結到index.css-->
+    <link rel="stylesheet" href="css/index.css">  <!--連結到index.css-->
 
     <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
     
 </head>
 <body>
-    <header>
-       <h2>header</h2>
-    </header>
     <nav>
-        <h2>navbar</h2>
         <div class="wrapper">
         <ul class="navbar">
             
@@ -23,7 +19,7 @@
             <li class="navbar"><a href="#How to use">如何使用</a></li>
             <li class="navbar"><a href="#About us">關於我們</a></li>   
             <li class="navbar"><a href="#Estimate">立即試算</a></li>
-            <li class="navbar" id="Logo"><img src="C:\Users\ASUS\robot-project\asset\image\logo_robot.png" alt="Robot" style="width: 50px;height: 50px;"></li>           
+            <li class="navbar" id="Logo"><img src="asset/image/logo_robot.png" alt="Robot" style="width: 50px;height: 50px;"></li>           
         </ul>
     </div>
     </nav>
@@ -31,24 +27,29 @@
         <a class="button-log-in" href="#popup1">登入</a>
     </div>
     
-    <div id="popup1" class="overlay">
-        <div class="popup">
-            <h2>Here i am</h2>
-            <a class="close" href="#">&times;</a>
-            <div class="content">
-                Thank to pop me out of that button, but now i'm done so you can close this window.
-            </div>
-        </div>
-    </div>
+    
     <section>
         <div id="container-first-paragraph">
             <div id="container-first-paragraph-pic">
                 <div>
-                    <a href=""><img src="C:\robot-project\asset\image\woman-who-saves-money-piggy.jpg" alt="" style="height: 400px;"></a>
+                    <a href=""><img src="asset/image/woman-who-saves-money-piggy.jpg" alt="" style="height: 400px;"></a>
                 </div>
             </div>
             <div id="container-first-paragraph-chart">
                 <div id="container-chart"></div>
+            </div>
+        </div>
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>登入</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    <p>帳號</p>
+                    <input type="text" name="foo"><br>
+                    <p>密碼</p>
+                    <input type="text" name="foo"><br><br>
+                    <button>登入</button>
+                </div>
             </div>
         </div>
         <div>
@@ -58,20 +59,39 @@
             <h2>FQA</h2>
         </div>
     </section>
-   
+    
     <footer>
-        <h2>footer</h2>
+        <div class="footer">
+            <div class="footer_navbar">
+                <p>
+                    <br><br>
+                    <a class="footer_navbar_a" href="#About us">關於我們|</a>
+                    <a class="footer_navbar_a" href="#Guided">網站導覽|</a>  
+                    <a class="footer_navbar_a" href="#privacy right">隱私權保護級著作權聲明|</a>
+                    <a class="footer_navbar_a" href="#Browser version">瀏覽器版本說明</a>
+                </p>
+                <p>
+                    聯絡資訊
+                    <i class="material-icons">&#xe0cd;</i>
+                    02-556-383
+                    <i class="material-icons">&#xe0e1;</i>
+                    1111@ntub.edu.tw
+                </p>
+    
+            </div>
+    
+        </div>
     </footer>
     <script>
         const data = {
-            "18-24歲": 12,
-            "25-29歲": 18,
-            "30-34歲": 22,
-            "35-39歲": 25,
-            "40-44歲": 32,
-            "45-49歲": 35,
-            "50-54歲": 26,
-            "55歲+": 18
+            "1月": 12,
+            "2月": 18,
+            "3月": 22,
+            "4月": 25,
+            "5月": 32,
+            "6月": 35,
+            "7月": 26,
+            "8月": 18
         }
 
         const container = document.querySelector('#container-chart');
@@ -99,11 +119,11 @@
         },
         yAxis: {
             title: {
-            text: "人數"
+            text: "YY"
             }
         },
         series: [{
-            name: "XX公司員工",
+            name: "XX",
             data: seriesData
         }]
         });    
