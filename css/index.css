@@ -1,3 +1,4 @@
+/** original **/
 body {
     margin: 0%;
     background-color: aqua;
@@ -110,13 +111,10 @@ html, body {
     height: 100%;
     margin: 0;
 }
-.wrapper {
-    min-height: calc(100% - 200px); /*減去footer高度*/
-}
 .footer {
     height: 200px; /*設定footer本身高度*/
     background-color: lightgray;
-    
+    margin-top: 50px;
 }
 ul.navbar{
     list-style-type: none;
@@ -144,7 +142,6 @@ li.navbar a:hover{
 #Login{
     margin-left: 30px;
     border-style: none;
-   
 }
 #Logo{
     float: left;
@@ -154,6 +151,9 @@ li.navbar a:hover{
 .footer_navbar{
     color: dimgray;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: GT America,Helvetica Neue,Helvetica,Arial,sans-serif !important;
 }
 a.footer_navbar_a{
@@ -162,4 +162,195 @@ a.footer_navbar_a{
 }
 a.footer_navbar_a a:hover{
     color: darkslategrey;
+}
+
+
+
+
+
+
+
+/** function list **/
+
+
+#container-second-paragraph {
+  height: 455px;
+  width: 1224px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-second-paragraph-block {
+  background-color: #70A7C5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 360px;
+  height: 400px;
+  color: white;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.container-second-paragraph-block:hover .container-second-paragraph-block-hide{
+  transform: translateY(0);
+}
+
+.container-second-paragraph-block-hide{
+  background-color: #C9DCE0;
+  position: absolute;
+  top: 0;
+  z-index: 1;    
+  border-radius: 10px;
+  padding: 20px;
+  width: 320px;
+  height: 360px;
+  color: #333;
+  transform: translateY(100%);
+  transition: 1s ease-in-out;
+}
+
+.container-second-paragraph-block img {
+  height: 120px;
+  margin: 30px 0;
+}
+
+.container-second-paragraph-block label {
+  font-size: 42px;
+  margin: 30px 0 0px 0;
+  font-weight: bolder;
+}
+
+.container-second-paragraph-block .h4 {
+  font-size: 34px;
+  font-weight: bolder;
+  margin: 10px 0 0 0;
+}
+
+.container-second-paragraph-block-hide .h5 {
+  text-align: center;
+  font-size: 28px;
+  width: 265px;
+  font-weight: bolder;
+  margin: 20px auto 0 auto;
+}
+
+
+
+.container-second-paragraph-block .container-second-paragraph-button {
+  background-color: #70A7C5;
+  border: 2px solid white;
+  font-size: 19px;
+  border-radius: 5px;
+  padding: 5px 20px;
+  position: absolute;
+  bottom: 50px;
+}
+
+.fontBolder {
+  font-weight: bolder !important;
+}
+
+
+/** faq **/
+#container-third-paragraph {
+  background-color: #CADEE1;
+  color: #5E6469;
+  display: flex;
+  width: 1124px;
+  margin: 0 auto;
+  justify-content: space-between;
+  font-size: 30px;
+  border-radius: 50px;
+  padding: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#container-third-paragraph .p {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-third-paragraph-img-block {
+  width: 249px;
+  height: 308px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.container-third-paragraph-img-block-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#qa1 {
+  width: 150px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#qa2 {
+  width: 150px;
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}
+
+.container-third-paragraph-details-block {
+  font-size: 30px;
+  width: 1015px;
+  padding: 0px 50px 10px 50px;
+}
+
+details {
+  padding: 10px 10px 10px 10px;
+  cursor: pointer;
+}
+
+.label_block {
+  background-color: #E0F2F4;
+  -webkit-box-shadow: inset 0px 8px 14px -1px rgba(200, 220, 222, 0.74);
+  box-shadow: inset 0px 8px 14px -1px rgba(200, 220, 222, 0.74);
+  font-size: 18px;
+  padding: 10px 5px;
+  border-radius: 5px;
+}
+
+details>label {
+  font-weight: lighter;
+}
+
+details>summary {
+  list-style: none;
+  background-image: url('../asset/image/arrow.png');
+  background-position: center right;
+  background-repeat: no-repeat;
+  padding: 0 50px 25px 0;
+}
+
+details>summary::-webkit-details-marker {
+  display: none;
+}
+
+.borderBottom {
+  border-bottom: 1px dashed black;
 }
