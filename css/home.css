@@ -1,0 +1,114 @@
+body {
+    margin: 0%;
+    font-family: "GT America Black","Helvetica Neue","Helvetica",Arial,sans-serif;
+}
+
+/* button */
+.btn-join-us {
+    width: 120px;
+    height: 45px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-join-us a {
+    color: inherit;  /* 移除超連結顏色 */
+    text-decoration: none;  /* 移除超連結底線 */
+    display: block;  /* 讓 <a> 填滿 <li> */
+}
+  
+.btn-join-us:hover {
+    background-color: #ffd65c;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+/* navbar */
+.container-nav {
+    display: flex;
+    justify-content: center;
+    list-style: none;  /* 移除項目符號 */
+}
+
+.container-nav a {
+    color: inherit;  /* 移除超連結顏色 */
+    text-decoration: none;  /* 移除超連結底線 */
+    display: block;  /* 讓 <a> 填滿 <li> */
+    
+}
+
+.container-nav-btn {
+    padding: 10px 20px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.container-nav-btn:not(#container-nav-btn-expect) {
+    border-color: gray;
+    border: 1px;
+    border-right-style: dashed;
+}
+
+.container-nav-btn:hover {
+    background-color: #ffd65c;
+    color: white;
+    border-radius: 10px;
+}
+
+/* first paragraph */
+.container-first-paragraph {
+    margin:5% 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container-first-paragraph-pic {
+    width: 50%;
+    /* background-color:blue;  */
+    text-align: center;
+}
+
+.container-first-paragraph-text {
+    width: 50%;
+    /* background-color:red;  */
+    display: table-cell; 
+	text-align: center; 
+    vertical-align: middle;
+    letter-spacing: 2.5px;
+    line-height: 30px;
+}
+
+#first-paragraph-pic {
+    width: 80%;
+    
+}
+
+.container-first-paragraph-text p {
+    font-size: 24px;
+}
+
+/* second paragraph */
+.container-second-paragraph {
+    /* height: 500px;
+    background-color: antiquewhite; */
+}
+
+#container-second-paragraph-chart {
+    /* float: right; */
+    /* background-color: gainsboro; */
+    height: 400px;
+    width: 700px;
+    padding: 10px;
+    border-radius: 10px; 
+}

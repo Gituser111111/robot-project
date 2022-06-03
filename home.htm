@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>智能撲滿</title>
+        <link rel="stylesheet" href="css/home.css">  <!--連結到index.css-->
+        <link rel="icon" href="asset/image/logo_money.png">
+        <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+    <body>
+        <nav>
+            <ul class="container-nav">
+                <li class="container-nav-btn">
+                    <a href="">立即試算</a>
+                </li>
+                <li class="container-nav-btn">
+                    <a href="">關於我們</a>
+                </li>
+                <li class="container-nav-btn">
+                    <a href="">知識＋</a>
+                </li>
+                <li class="container-nav-btn" id="container-nav-btn-expect">
+                    <a href="">會員專區</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- first paragraph -->
+        <div class="container-first-paragraph">
+            <div class="container-first-paragraph-pic">
+                <img src="asset/image/未命名的作品 (1).png" alt="" width="500px" id="first-paragraph-pic">
+            </div>
+            <div class="container-first-paragraph-text">
+                <p>即刻加入智能撲滿<br><br>無上限試算最適合您的投資組合</p>
+                
+                <button class="btn-join-us"><a href="https://www.google.com/search?q=css+%E8%A1%8C%E9%AB%98&oq=css+%E8%88%AA%E9%AB%98&aqs=chrome.1.69i57j0i10.16428j0j7&sourceid=chrome&ie=UTF-8">加入我們</a></button>
+            </div>
+        </div>
+
+        <!-- second paragraph -->
+        <div class="container-second-paragraph">
+            <div id="container-second-paragraph-chart">
+                <div id="container-chart"></div>
+            </div>
+            
+        </div>
+        <script>
+            const data = {
+                "1月": 12,
+                "2月": 18,
+                "3月": 22,
+                "4月": 25,
+                "5月": 32,
+                "6月": 35,
+                "7月": 26,
+                "8月": 18
+            }
+    
+            const container = document.querySelector('#container-chart');
+            const xAxisCate = Object.keys(data);
+            const seriesData = xAxisCate.map(key => data[key]);
+    
+            var myChart = Highcharts.chart(container, {
+            chart: {
+                type: "line"
+            },
+            title: {
+                text: "您的投資組合",
+            },
+            subtitle: {
+                // 副標題設定
+            },
+            caption: {
+                // 圖表說明設定
+            },
+            credits: {
+                // 版權標籤設定
+            },
+            xAxis: {
+                categories: xAxisCate
+            },
+            yAxis: {
+                title: {
+                text: "YY"
+                }
+            },
+            series: [{
+                name: "XX",
+                data: seriesData
+            }]
+            });    
+        </script> 
+    </body>
+</html>
