@@ -1,0 +1,127 @@
+body {
+    margin: 0%;
+    font-family: "GT America Black","Helvetica Neue","Helvetica",Arial,sans-serif;
+}
+
+/* button */
+.btn-join-us {
+    width: 120px;
+    height: 45px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-join-us a {
+    color: inherit;  /* 移除超連結顏色 */
+    text-decoration: none;  /* 移除超連結底線 */
+    display: block;  /* 讓 <a> 填滿 <li> */
+}
+  
+.btn-join-us:hover {
+    background-color: #ffd65c;
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+/* navbar */
+.container-navbar {
+    height: 80px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-nav {
+    display: flex;
+    justify-content: center;
+    list-style: none;  /* 移除項目符號 */
+    /* background-color: beige; */
+    margin: 0%;
+    padding: 1.5%;
+    
+}
+
+.container-nav a {
+    color: inherit;  /* 移除超連結顏色 */
+    text-decoration: none;  /* 移除超連結底線 */
+    display: block;  /* 讓 <a> 填滿 <li> */
+    
+}
+
+.container-nav-btn {
+    /* padding: 10px 20px; */
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.container-nav-btn:not(#container-nav-btn-expect) {
+    border-color: gray;
+    border: 1px;
+    border-right-style: dashed;
+}
+
+.container-nav-btn-text:hover {
+    background-color: #ffd65c;
+    color: white;
+    border-radius: 10px;
+}
+
+#container-nav-btn-text-active{
+    background-color: #ffd65c;
+    color: white;
+    border-radius: 10px;
+}
+
+.container-nav-btn-text {
+    margin: 0 10px;
+    padding: 10px;
+    /* background-color: bisque; */
+}
+
+/* first-paragraph */
+.container-first-paragraph {
+    margin:2% 0 0 0%;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;     */
+}
+
+#big10 #department {
+    max-width: 40%;
+}
+#btn-join-us {
+    width: 250px;
+    height: 45px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 20px;
+}
+
+#btn-join-us a {
+    color: inherit;  /* 移除超連結顏色 */
+    text-decoration: none;  /* 移除超連結底線 */
+    display: block;  /* 讓 <a> 填滿 <li> */
+}
+  
+#btn-join-us:hover {
+    background-color: #ffd65c;
+    color: #fff;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>智能撲滿</title>
+        <link rel="stylesheet" href="../css/about-us.css">  <!--連結到index.css-->
+        <link rel="icon" href="../asset/image/logo_money.png">
+        <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    </head>
+        <body>
+        <nav class="container-navbar">
+            <ul class="container-nav">
+                <li class="container-nav-logo">
+                    <a href="home.htm"><img src="../asset/image/logo_pig-removebg-preview.png" alt="" width="75px" style="left: 50px; top: 5px; position: absolute;"></a>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text">
+                        <a href="invest.htm">立即試算</a>
+                    </div>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text" id="container-nav-btn-text-active">
+                        <a href="about-us.htm">關於我們</a>
+                    </div>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text">
+                        <a href="knowledge.htm">知識＋</a>
+                    </div>
+                   
+                </li>
+                <li class="container-nav-btn" id="container-nav-btn-expect">
+                    <div class="container-nav-btn-text">
+                        <a href="member.htm">會員專區</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </nav>
+        <!-- first paragraph -->
+        <!-- <div class="contanier-first-paragraph">
+            <nav class="container-first-paragraph-nav">
+                <a data-id="1">個人檔案</a>
+                <a data-id="2">歷史試算紀錄</a>
+            </nav>
+        </div>
+        <script>
+            document.querySelectorAll('.container-first-paragraph-nav a').forEach(e => e.addEventListener('click', _ => change(e.dataset.id)))
+        </script> -->
+
+        <div class="container">
+
+            <nav class="second">
+                <a data-id="1">智能撲滿的投資標的</a>
+                <a data-id="2">聯絡我們</a>
+            </nav>
+            <main >
+                <div class="active">
+                    <article class="container-personial-text">
+                       <article class="container-text">
+                            <b>從美國S&P 500標準普爾指數中選取396家企業作為我們的投資標的。</b>
+                            Q：為什麼是396家？<br>
+                            A：資料來源於yahoo finance從2006紀錄至2018年，我們採用的396企業則是在這段期間內保有完整資料的企業<br>
+                            Q：為什麼是運用以前的資料？會不會失去真實性？<br>
+                            A：長時間的資料增加我們參考價值，未來會定時更新投資標的數值。
+                        </article> 
+                    </article>
+                    
+                   
+                </div>
+                <div>
+                    <article class="container-personial-text">
+                        <article class="container-text">
+                            我們是來自國立臺北商業大學資訊管理系三年級的團隊<br>
+                            地址：100025台北市中正區濟南路一段321號<br>
+                            電話：(02)33222777
+                        </article> 
+                    </article>
+                </div>
+            </main>
+          
+          </div>
+          
+        <script>
+            document.querySelectorAll('nav a')
+            .forEach(e => e.addEventListener('click', _ => change(e.dataset.id)))
+
+
+            function change(n) {
+            let panels = document.querySelectorAll('main div')
+            panels.forEach(p => p.classList.remove('active'))
+            panels[n - 1].classList.add('active')
+            }
+        </script>
+
+
+  
+        <script>
+            // Build the chart
+            var result =
+            [['AMAZON.COM', 0.05 ], 
+            ['ABBOTT LABORATORIES', 30], 
+            ['AES', 15], 
+            ['ABIOMED', 5]];
+        console.log(result.length)
+        
+        Highcharts.chart('container', {
+            chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+            },
+            title: {
+            text: '您的投資組合'
+            },
+            tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+            },
+            plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                enabled: false
+                },
+                showInLegend: true
+            }
+            },
+            series: [{
+            name: '權重',
+            colorByPoint: true,
+            data: [{
+                name: result[0][0],
+                y: result[0][1]*1000,
+                // sliced: true,
+                // selected: true
+            }, {
+                name: result[1][0],
+                y: result[1][1]
+            }, {
+                name: result[2][0],
+                y: result[2][1]
+            }, {
+                name: result[3][0],
+                y: result[3][1]
+            }
+            ]
+            }]
+        });
+        </script>
+    </body>
+</html>

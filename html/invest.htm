@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>智能撲滿</title>
+        <link rel="stylesheet" href="../css/invest.css">  <!--連結到index.css-->
+        <link rel="icon" href="../asset/image/logo_money.png">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <body>
+        <nav class="container-navbar">
+            <ul class="container-nav">
+                <li class="container-nav-logo">
+                    <a href="home.htm"><img src="../asset/image/logo_pig-removebg-preview.png" alt="" width="75px" style="left: 50px; top: 5px; position: absolute;"></a>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text" id="container-nav-btn-text-active">
+                        <a href="invest.htm">立即試算</a>
+                    </div>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text">
+                        <a href="about-us.htm">關於我們</a>
+                    </div>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text">
+                        <a href="knowledge.htm">知識＋</a>
+                    </div>
+                   
+                </li>
+                <li class="container-nav-btn" id="container-nav-btn-expect">
+                    <div class="container-nav-btn-text">
+                        <a href="member.htm">會員專區</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </nav>
+
+        <!-- first paragraph -->
+        <div class="container-first-paragraph">
+            <div class="container-first-paragraph-form">
+                <div style="width: 60%; text-align: center; margin-left: 20%;">
+                    <div class="w3-bar w3-black">
+                    <button class="w3-bar-item w3-button" onclick="openCity('big10')" id="btn-join-us">投資組合前十大之企業</button>
+                    <button class="w3-bar-item w3-button" onclick="openCity('department')" id="btn-join-us">全球行業分類標準</button>
+                    </div>
+                
+                    <div id="big10" class="w3-container city">
+                        <h2>投資組合前十大之企業</h2>
+                        <figure class="highcharts-figure">
+                            <article id="big10"></article>
+                        </figure>
+                      
+                    </div>
+                
+                    <div id="department" class="w3-container city" style="display:none">
+                        <h2>全球行業分類標準</h2>
+                            
+                        <figure class="highcharts-figure">
+                            <article id="department"></article>
+                        </figure>
+                
+                    </div>
+            </div>
+        </div>
+        <script>
+            function openCity(cityName) {
+              var i;
+              var x = document.getElementsByClassName("city");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              document.getElementById(cityName).style.display = "block";  
+            }
+            </script>
+            
+            
+              
+              <script>
+                  // Build the chart
+                  var result =
+                  [['company1', 30], ['company2', 20], ['company3', 18], ['company4', 12], ['company5', 10], ['company6', 5], ['company7', 1], ['company8', 1], ['company9', 1], ['company10', 1],  ['others', 1]]
+              console.log(result.length)
+              
+              Highcharts.chart('big10', {
+                chart: {
+                  plotBackgroundColor: null,
+                  plotBorderWidth: null,
+                  plotShadow: false,
+                  type: 'pie'
+                },
+                title: {
+                  text: '投資組合前十大之企業'
+                },
+                tooltip: {
+                  pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                accessibility: {
+                  point: {
+                    valueSuffix: '%'
+                  }
+                },
+                plotOptions: {
+                  pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                      enabled: false
+                    },
+                    showInLegend: true
+                  }
+                },
+                series: [{
+                  name: '權重',
+                  colorByPoint: true,
+                  data: [{
+                    name: result[0][0],
+                    y: result[0][1],
+                    // sliced: true,
+                    // selected: true
+                  }, {
+                    name: result[1][0],
+                    y: result[1][1]
+                  }, {
+                    name: result[2][0],
+                    y: result[2][1]
+                  }, {
+                    name: result[3][0],
+                    y: result[3][1]
+                  }, {
+                    name: result[4][0],
+                    y: result[4][1]
+                  }, {
+                    name: result[5][0],
+                    y: result[5][1]
+                  }, {
+                    name: result[6][0],
+                    y: result[6][1]
+                  }, {
+                    name: result[7][0],
+                    y: result[7][1]
+                  }, {
+                    name: result[8][0],
+                    y: result[8][1]
+                  }, {
+                    name: result[9][0],
+                    y: result[9][1]
+                  }, {
+                    name: result[10][0],
+                    y: result[10][1]
+                  }
+                  ]
+                }]
+              });
+              </script>
+              <script>
+                // Build the chart
+                var result =
+                [['工業', 20], ['公共事業', 20], ['必需品', 18], ['材料', 12], ['房地產', 10], ['金融', 5], ['非必需消費品', 5], ['能源', 4], ['通訊服務', 3], ['資訊技術', 2],  ['衛生保健', 1]]
+                console.log(result.length)
+              
+              Highcharts.chart('department', {
+              chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+              },
+              title: {
+                text: '全球行業分類標準'
+              },
+              tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+              },
+              accessibility: {
+                point: {
+                  valueSuffix: '%'
+                }
+              },
+              plotOptions: {
+                pie: {
+                  allowPointSelect: true,
+                  cursor: 'pointer',
+                  dataLabels: {
+                    enabled: false
+                  },
+                  showInLegend: true
+                }
+              },
+              series: [{
+                name: '權重',
+                colorByPoint: true,
+                data: [{
+                  name: result[0][0],
+                  y: result[0][1],
+                  // sliced: true,
+                  // selected: true
+                }, {
+                  name: result[1][0],
+                  y: result[1][1]
+                }, {
+                  name: result[2][0],
+                  y: result[2][1]
+                }, {
+                  name: result[3][0],
+                  y: result[3][1]
+                }, {
+                  name: result[4][0],
+                  y: result[4][1]
+                }, {
+                  name: result[5][0],
+                  y: result[5][1]
+                }, {
+                  name: result[6][0],
+                  y: result[6][1]
+                }, {
+                  name: result[7][0],
+                  y: result[7][1]
+                }, {
+                  name: result[8][0],
+                  y: result[8][1]
+                }, {
+                  name: result[9][0],
+                  y: result[9][1]
+                }, {
+                  name: result[10][0],
+                  y: result[10][1]
+                }
+                ]
+              }]
+              });
+            </script>
+    </body>
+</html>

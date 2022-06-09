@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>智能撲滿</title>
+        <link rel="stylesheet" href="../css/knowledge.css">  <!--連結到index.css-->
+        <link rel="icon" href="../asset/image/logo_money.png">
+        <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <body>
+        <nav class="container-navbar">
+            <ul class="container-nav">
+                <li class="container-nav-logo">
+                    <a href="home.htm"><img src="../asset/image/logo_pig-removebg-preview.png" alt="" width="75px" style="left: 50px; top: 5px; position: absolute;"></a>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text">
+                        <a href="invest.htm">立即試算</a>
+                    </div>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text">
+                        <a href="about-us.htm">關於我們</a>
+                    </div>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text" id="container-nav-btn-text-active">
+                        <a href="knowledge.htm">知識＋</a>
+                    </div>
+                   
+                </li>
+                <li class="container-nav-btn" id="container-nav-btn-expect">
+                    <div class="container-nav-btn-text">
+                        <a href="member.htm">會員專區</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </nav>
+
+        <!-- first paragraph -->
+        <div class="container">
+
+            <nav class="second">
+                <a data-id="1">什麼是ETF</a>
+                <a data-id="2">什麼是股票</a>
+                <a data-id="3">警語</a>
+            </nav>
+            <main >
+                <div class="active">
+                    <article class="container-personial-text">
+                        <article class="container-text">
+                            ETF英文原文為Exchange Traded Fund，中文稱為「指數股票型基金」，是一種由投信公司發行，追蹤、模擬或複製標的指數之績效表現，在證券交易所上市交易的開放式基金。 ETF兼具開放式基金及股票之特色，上市後可於初級市場進行申購或買回，亦可於次級市場盤中交易時間隨時向證券商下單買賣。
+                            現行上市ETF依法規架構分類，可分為三大類型，包括證券投資信託ETF（證信託ETF），期貨信託ETF（期貨ETF）及跨境上市ETF（境外ETF）。                            
+                        </article> 
+                    </article>
+                </div>
+                <div>
+                    <article class="container-personial-text">
+                        <article class="container-text">
+                            股票是一種有價證券，是股份有限公司為籌集資金發給投資者做為公司資本部分所有權的憑證，成為股東以此獲得股息，並分享公司成長或交易市場波動帶來的利潤；但也要共同承擔公司運作錯誤所帶來的風險。
+                        </article> 
+                    </article>
+                </div>
+                <div>
+                    <article class="container-personial-text">
+                        <article class="container-text">
+                            ● 基金並非存款，基金投資具有投資風險，客戶投資本商品前應自行了解判斷並自負盈虧。<br>
+
+                            ● 投資人因不同時間進場，將有不同之投資績效，過去績效亦不代表未來績效之保證。<br>
+
+                            ●基金之配息率不等於基金之報酬率，基金交易應考量之風險因素如下：<br>
+                            (1)投資標的及投資地區可能產生之風險：市場（政治、經濟、社會變動、匯率、利率、股價、指數或其他標的資產之價格波動）風險、流動性風險、信用風險、產業景氣循環變動、證券相關商品交易、法令、貨幣等風險。<br>
+                            (2)因前述風險、受益人大量買回或基金暫停計算買回價格等因素，或有延遲給付買回價金之可能。<br>
+
+                            ● 本公司保留隨時變更及停止本服務所提供任何活動或優惠之權利。<br>
+
+                            以上資料只提供參考用途，本網站對資料的完整性、正確性等等，均不負責。若有錯誤本網站或關係企業與受僱人等並不負任何法律責任，客戶需自行判斷資訊之正確性。
+
+                        </article> 
+                    </article>
+                </div>
+            </main>
+          
+          </div>
+          
+        <script>
+            document.querySelectorAll('nav a')
+            .forEach(e => e.addEventListener('click', _ => change(e.dataset.id)))
+
+
+            function change(n) {
+            let panels = document.querySelectorAll('main div')
+            panels.forEach(p => p.classList.remove('active'))
+            panels[n - 1].classList.add('active')
+            }
+        </script>
+
+
+  
+        <script>
+            // Build the chart
+            var result =
+            [['AMAZON.COM', 0.05 ], 
+            ['ABBOTT LABORATORIES', 30], 
+            ['AES', 15], 
+            ['ABIOMED', 5]];
+        console.log(result.length)
+        
+        Highcharts.chart('container', {
+            chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+            },
+            title: {
+            text: '您的投資組合'
+            },
+            tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+            },
+            plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                enabled: false
+                },
+                showInLegend: true
+            }
+            },
+            series: [{
+            name: '權重',
+            colorByPoint: true,
+            data: [{
+                name: result[0][0],
+                y: result[0][1]*1000,
+                // sliced: true,
+                // selected: true
+            }, {
+                name: result[1][0],
+                y: result[1][1]
+            }, {
+                name: result[2][0],
+                y: result[2][1]
+            }, {
+                name: result[3][0],
+                y: result[3][1]
+            }
+            ]
+            }]
+        });
+        </script>
+    </body>
+</html>

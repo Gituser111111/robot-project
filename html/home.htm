@@ -1,26 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>智能撲滿</title>
-        <link rel="stylesheet" href="css/home.css">  <!--連結到index.css-->
-        <link rel="icon" href="asset/image/logo_money.png">
+        <link rel="stylesheet" href="../css/home.css">  <!--連結到index.css-->
+        <link rel="icon" href="../asset/image/logo_money.png">
         <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
     <body>
-        <nav>
+        <nav class="container-navbar">
             <ul class="container-nav">
-                <li class="container-nav-btn">
-                    <a href="">立即試算</a>
+                <li class="container-nav-logo">
+                    <a href="home.htm"><img src="../asset/image/logo_pig-removebg-preview.png" alt="" width="75px" style="left: 50px; top: 5px; position: absolute;"></a>
                 </li>
                 <li class="container-nav-btn">
-                    <a href="">關於我們</a>
+                    <div class="container-nav-btn-text">
+                        <a href="invest.htm">立即試算</a>
+                    </div>
                 </li>
                 <li class="container-nav-btn">
-                    <a href="">知識＋</a>
+                    <div class="container-nav-btn-text">
+                        <a href="about-us.htm">關於我們</a>
+                    </div>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text">
+                        <a href="knowledge.htm">知識＋</a>
+                    </div>
+                   
                 </li>
                 <li class="container-nav-btn" id="container-nav-btn-expect">
-                    <a href="">會員專區</a>
+                    <div class="container-nav-btn-text">
+                        <a href="member.htm">會員專區</a>
+                    </div>
+                    
                 </li>
             </ul>
         </nav>
@@ -28,22 +41,36 @@
         <!-- first paragraph -->
         <div class="container-first-paragraph">
             <div class="container-first-paragraph-pic">
-                <img src="asset/image/未命名的作品 (1).png" alt="" width="500px" id="first-paragraph-pic">
+                <img src="../asset/image/未命名的作品 (1).png" alt="" width="500px" id="first-paragraph-pic">
             </div>
             <div class="container-first-paragraph-text">
                 <p>即刻加入智能撲滿<br><br>無上限試算最適合您的投資組合</p>
-                
-                <button class="btn-join-us"><a href="https://www.google.com/search?q=css+%E8%A1%8C%E9%AB%98&oq=css+%E8%88%AA%E9%AB%98&aqs=chrome.1.69i57j0i10.16428j0j7&sourceid=chrome&ie=UTF-8">加入我們</a></button>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="20" value="10" class="slider" id="myRange">
+                    <p style="font-size: 16px;">預計投報率：<span id="demo"></span>%</p>
+                </div>
+                <div>
+                    <button class="btn-join-us"><a href = "invest.htm">點我試算</a></button>
+                </div>     
             </div>
         </div>
+        
 
         <!-- second paragraph -->
         <div class="container-second-paragraph">
-            <div id="container-second-paragraph-chart">
+            <div class="container-second-paragraph-text">
+                <p>客制化的投資組合<br>更貼合你的風險評價<br>一同攜手打造財富自由</p>
+            </div>
+            <div class="container-second-paragraph-chart">
                 <div id="container-chart"></div>
             </div>
             
         </div>
+
+        <!-- third paragraph -->
+        
+        
+
         <script>
             const data = {
                 "1月": 12,
@@ -81,14 +108,23 @@
             },
             yAxis: {
                 title: {
-                text: "YY"
+                text: "投報率百分比"
                 }
             },
             series: [{
-                name: "XX",
+                name: "投報率曲線",
                 data: seriesData
             }]
             });    
         </script> 
+        <script>
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+            
+            slider.oninput = function() {
+              output.innerHTML = this.value;
+            }
+            </script>
     </body>
 </html>
