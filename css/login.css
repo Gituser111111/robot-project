@@ -14,7 +14,9 @@ input {
 input:focus {
     outline: none !important;
 }
-
+label{
+    font-weight: bold;
+}
 /* button */
 .btn-join-us {
     width: 120px;
@@ -122,7 +124,7 @@ body{
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.container-first-paragraph-form img {
+.container-first-paragraph-form img:not(.secreteyeC,.secreteyeO) {
     margin: 20px 0 40px 0;
 }
 
@@ -163,4 +165,16 @@ body{
 
 .input-row input {
     border-color: #ACACAC;
+}
+
+div.ym-error{
+    position: absolute; 
+    font-size: small;
+    color: red;
+}
+.eye{
+    position: relative;
+    right: 20px;
+    display: flex;
+    top:5px
 }
