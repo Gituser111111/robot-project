@@ -1,39 +1,191 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>智能撲滿</title>
-    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/login.css">
     <!--連結到index.css-->
-    <link rel="icon" href="../asset/image/logo_money.png" />
-  </head>
-  <body>
+    <link rel="icon" href="../asset/image/logo_money.png">
+    <script src="../asset/jquery-3.6.1.min.js"></script>
+    <script src="../asset/jquery.validate.js"></script>
+
+<body>
+
     <!-- first paragraph -->
-    <div class="container-first-paragraph-form">
-      <a href="home.htm" title="返回首頁">
-        <img
-        src="../asset/image/logo_pig-removebg-preview.png"
-        alt=""
-        width="75px"
-        />
-      </a>
-      <div class="input-row">
-        <label>帳號</label>
-        <input />
-      </div>
-      <div class="input-row">
-        <label>密碼</label>
-        <input />
-      </div>
-      <button class="btn-join-us" id="container-first-paragraph-btn-join-us">
-        <a href="member.htm">登入</a>
-      </button>
-      <div class="btn-group">
-        <div><a href="register.htm"> 加入我們 </a></div>
-        |
-        <div>忘記密碼</div>
-      </div>
-    </div>
-  </body>
+    <form id="form" method="post" action="" class="container-first-paragraph-form">
+        <a href="home.htm" title="返回首頁">
+            <img src="../asset/image/logo_pig-removebg-preview.png" alt="" width="75px" />
+        </a>
+        <div class="alter-message" style="color:red">
+            <!-- {% block body %} -->
+            <!-- <a>{{request.messages}}<a>
+                        {% endblock %} -->
+                        <!-- 後端開發完 可以打開的註解 -->
+                        <!-- 預留空間作為錯誤訊息 -->
+        </div>
+        <div class="input-row">
+            <label>帳號</label>
+            <div>
+                <input type="text" id="account" name="account" placeholder="輸入使用者帳號" onblur="requiredField(this)" />
+            </div>
+        </div>
+        <div class="input-row">
+            <label>密碼</label>
+            <div style="flex-direction: column;">
+                <input type="password" id="password" name="password" placeholder="輸入使用者密碼" onblur="requiredField(this)"/>
+
+                <span class="eye" style="width: 0px;float:right">
+                    <img class="secreteyeC" style="width:15px" src="../asset/image/closedeye.png">
+                    <img class="secreteyeO" style="width:15px"
+                        src="../asset/image/openeye.png">
+                </span>
+    
+            </div>
+            
+        </div>
+        <button class="btn-join-us" id="container-first-paragraph-btn-join-us">
+            <a>登入</a>
+        </button>
+        <div class="btn-group">
+            <div><a href="register.htm"> 加入我們 </a></div>
+            |
+            <div><a href="forgotPassword.htm">忘記密碼</a></div>
+        </div>
+    </form>
+</body>
+
 </html>
+
+
+
+<script>
+    // 密碼顯示隱藏
+    $(function () {
+
+        var a = 1;
+        $('.secreteyeO').hide();
+        // $('.alter').hide();
+
+        $("secreteyeC").hide();
+        $('.eye').click(function () {
+            a += 1;
+            if (a % 2 == 0) {
+                $('.secreteyeO').show();
+                $('.secreteyeC').hide();
+                $('#password').prop('type', 'text');
+            } else {
+                $('.secreteyeO').hide();
+                $('.secreteyeC').show();
+                $('#password').prop('type', 'password');
+
+            }
+
+        })
+
+
+
+    })
+
+</script>
+
+<script>
+    // 驗證工具
+    $(function () {
+        // 如果使用 click button 事件
+        $('#btn-join-us').on('click', function () {
+            $("#form").valid();
+        });
+        $('#form').validate(
+
+            {
+                errorClass: 'ym-error',
+                errorElement: 'div',
+                errorPlacement: function (error, element) {
+                    element.parent().append(error);
+                },
+                /* 常用檢測屬性
+               required:必填
+               noSpace:空白
+               minlength:最小長度
+               maxlength:最大長度
+               email:信箱格式
+               number:數字格式
+               url:網址格式https://www.minwt.com
+               */
+
+                rules: {
+                    account: {
+                        required: true,
+                        lettersonly:true,
+                        minlength:8
+                    },
+                    password: {
+                        required: true,
+                        lettersonly:true,
+                        minlength:8
+                    },
+
+                },
+                messages: {
+                    account: {
+                        required: '此欄位不得空白',
+                        lettersonly:" 僅輸入8碼以上(英文/數字)",
+                        minlength:" 僅輸入8碼以上(英文/數字)",
+                    },
+
+                    password: {
+                        required: '此欄位不得空白',
+                        lettersonly:" 僅輸入8碼以上(英文/數字)",
+                        minlength:" 僅輸入8碼以上(英文/數字)",
+                    },
+                },
+                submitHandler: function (form) {
+                    form.submit();
+                    location.href = 'home.htm';
+                }
+
+            });
+
+            jQuery.validator.addMethod("lettersonly", function (value, element) {
+        return this.optional(element) || /^[a-zA-Z0-9]+$/i.test(value);
+    }, "Only alphabetical characters");
+
+    jQuery.validator.addMethod("letters", function (value, element) {
+        return this.optional(element) || /^[\u3300-\u9fff\uf900-\ufaff\a-zA-z\s]+$/i.test(value);
+    }, "alphabetical characters and chinese and space");
+
+    jQuery.validator.addMethod("lettersonlyfirst", function (value, element) {
+        return (this.optional(element) || value.match(/^[\u3300-\u9fff\uf900-\ufaff\a-zA-z]/i));
+    }, "Only alphabetical characters");
+    });
+</script>
+
+<script>
+    function requiredField(input) {
+        $(input).valid();
+        // if (input.value.length < 1) {
+        //     //red border
+        //     $(input).parent().parent().next().children().next().children().show();
+
+
+
+        // } else if (input.type == "email") {
+        //     console.log("this is an email type");
+
+        //     if (input.value.indexOf("@") != -1 && input.value.indexOf(".") != -1) {
+        //         //green border
+        //         input.style.borderColor = "#2ecc71";
+        //     } else {
+        //         //red border
+        //         input.style.borderColor = "#e74c3c";
+        //     }
+
+        // } else {
+        //     //green border
+        //     input.style.borderColor = "#2ecc71";
+        // }
+    }
+</script>
